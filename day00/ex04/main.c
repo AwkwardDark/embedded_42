@@ -21,16 +21,14 @@ int main(void)
 
 	while (1)
 	{
-		if (!(PIND & (1 << 2)))
+		if (!(PIND & (1 << 2)) && value < 15)
 		{
-			if (value < 15)
-				value++;
+			value++;
 			while (!(PIND & (1 << 2)));
 		}
-		if (!(PIND & (1 << 4)))
+		if (!(PIND & (1 << 4)) && value > 0)
 		{
-			if (value > 0)
-				value--;
+			value--;
 			while (!(PIND & (1 << 4)));
 		}
 		PORTB = ((value > 7) << 4) | (value & 0x0F);
