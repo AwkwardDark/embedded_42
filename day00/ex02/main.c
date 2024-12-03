@@ -13,7 +13,6 @@ int main (void)
 		if (!(PIND & (1 << 2)))
             PORTB = (1 << 0);
         PORTB = (0 << 0); //If not pressed PB0 is turned off
-		_delay_ms(100);
     }
     return (0);
 }
