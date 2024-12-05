@@ -17,7 +17,7 @@ int main(void)
 	TCCR1B |= (1 << WGM13) | (1 << CS10) | (1 << CS12);
 
 	// Set Top for timer cycle
-	ICR1 = F_CPU / (2 * 1 * 1024);
+	ICR1 = F_CPU / (2 * 1 * 1024) - 2;
 
 	// Set OCR1A to variable percentage to control the duty cycle
 	OCR1A = ICR1 / 10;
